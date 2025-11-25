@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reduce Your Hospital Birth Bills - Medical Advocate</title>
+    <script src="https://cdn.logrocket.com/LogRocket.min.js" crossorigin="anonymous" onload="window.LogRocket && window.LogRocket.init('dhqzb7/settlealert');"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #0a1128 0%, #1e3a5f 50%, #2c5282 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 400px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 40px 30px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-block;
+        background: rgba(16, 185, 129, 0.2);
+        color: #10b981;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 24px;
+        border: 1px solid rgba(16, 185, 129, 0.3);
+      }
+
+      .brand {
+        color: #10b981;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        letter-spacing: -0.5px;
+      }
+
+      .logo {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+      }
+
+      h1 {
+        color: #ffffff;
+        font-size: 1.75rem;
+        font-weight: 700;
+        margin-bottom: 12px;
+        line-height: 1.2;
+      }
+
+      .tagline {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.8rem;
+        margin-bottom: 32px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .email-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 32px;
+      }
+
+      input[type="email"] {
+        padding: 16px;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.05);
+        color: #ffffff;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      input[type="email"]::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      input[type="email"]:focus {
+        outline: none;
+        border-color: #10b981;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      button {
+        padding: 16px;
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: #ffffff;
+        border: none;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      }
+
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      }
+
+      button:active {
+        transform: translateY(0);
+      }
+
+      .toast {
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100px);
+        background: rgba(16, 185, 129, 0.95);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        font-weight: 500;
+      }
+
+      .toast.show {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+
+      .toast.error {
+        background: rgba(239, 68, 68, 0.95);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="brand">Medical Advocate</div>
+      <div class="badge">FOR NEW PARENTS</div>
+      <div class="logo">👶</div>
+      <h1>Hospital Birth Bills Shouldn't Bankrupt Your Family</h1>
+      <p class="tagline">We negotiate down those shocking delivery charges</p>
+
+      <form class="email-form" id="email-form">
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+        />
+        <button type="submit">Get Free Consultation</button>
+      </form>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybDi6B3tkJt-KZArKRgrqPvpV0M1tm07c8Kmbs6Yft3MnwNGWUhiAC7W9JHrqC-fts/exec';
+
+      document.getElementById('email-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const email = this.querySelector('input[name="email"]').value.trim();
+        const urlParams = new URLSearchParams(window.location.search);
+        const source = urlParams.get("source") || "new-parents";
+        const toast = document.getElementById("toast");
+
+        // Create hidden form for submission
+        const form = document.createElement('form');
+        form.method = 'POST';
+        form.action = GOOGLE_SCRIPT_URL;
+        form.target = 'medical-advocate-iframe';
+        form.style.display = 'none';
+
+        const emailField = document.createElement('input');
+        emailField.type = 'hidden';
+        emailField.name = 'email';
+        emailField.value = email;
+        form.appendChild(emailField);
+
+        const sourceField = document.createElement('input');
+        sourceField.type = 'hidden';
+        sourceField.name = 'source';
+        sourceField.value = source;
+        form.appendChild(sourceField);
+
+        const projectField = document.createElement('input');
+        projectField.type = 'hidden';
+        projectField.name = 'project';
+        projectField.value = 'medical-advocate';
+        form.appendChild(projectField);
+
+        // Create hidden iframe
+        let iframe = document.getElementById('medical-advocate-iframe');
+        if (!iframe) {
+          iframe = document.createElement('iframe');
+          iframe.name = 'medical-advocate-iframe';
+          iframe.id = 'medical-advocate-iframe';
+          iframe.style.display = 'none';
+          document.body.appendChild(iframe);
+        }
+
+        document.body.appendChild(form);
+        form.submit();
+
+        // Show toast notification
+        setTimeout(() => {
+          this.querySelector('input[name="email"]').value = '';
+
+          toast.textContent = "We'll be in touch soon!";
+          toast.classList.add("show");
+
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 3000);
+        }, 500);
+      });
+    </script>
+  </body>
+</html>
