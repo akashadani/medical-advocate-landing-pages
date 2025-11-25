@@ -3,8 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reduce Your Vet Bills - Medical Advocate</title>
-    <script src="https://cdn.logrocket.com/LogRocket.min.js" crossorigin="anonymous" onload="window.LogRocket && window.LogRocket.init('dhqzb7/settlealert');"></script>
+    <title>Reduce Your Vet Bills - BillRelief</title>
+    <script src="https://cdn.logrocket.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener('load', function() {
+        if (window.LogRocket) {
+          window.LogRocket.init('dhqzb7/billrelief');
+        }
+      });
+    </script>
     <style>
       * {
         margin: 0;
@@ -153,11 +160,11 @@
   </head>
   <body>
     <div class="container">
-      <div class="brand">Medical Advocate</div>
-      <div class="badge">FOR PET OWNERS</div>
+      <div class="brand">BillRelief</div>
+      <div class="badge">NO WIN, NO FEE</div>
       <div class="logo">🐾</div>
-      <h1>Your Pet Deserves Care Without the Financial Stress</h1>
-      <p class="tagline">We slash those emergency vet bills down</p>
+      <h1>Caring for Your Pet Shouldn't Mean Going Broke</h1>
+      <p class="tagline">We slash down vet bills for you</p>
 
       <form class="email-form" id="email-form">
         <input
@@ -173,7 +180,7 @@
     <div class="toast" id="toast"></div>
 
     <script>
-      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbybDi6B3tkJt-KZArKRgrqPvpV0M1tm07c8Kmbs6Yft3MnwNGWUhiAC7W9JHrqC-fts/exec';
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZkOvZJg7Rzp_q5K6lIUA20EbZHASjidNZ_RsAjZtw-TtEG4t1dFSOEUZkzhhpe7b8Ow/exec';
 
       document.getElementById('email-form').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -187,7 +194,7 @@
         const form = document.createElement('form');
         form.method = 'POST';
         form.action = GOOGLE_SCRIPT_URL;
-        form.target = 'medical-advocate-iframe';
+        form.target = 'billrelief-iframe';
         form.style.display = 'none';
 
         const emailField = document.createElement('input');
@@ -205,15 +212,15 @@
         const projectField = document.createElement('input');
         projectField.type = 'hidden';
         projectField.name = 'project';
-        projectField.value = 'medical-advocate';
+        projectField.value = 'billrelief';
         form.appendChild(projectField);
 
         // Create hidden iframe
-        let iframe = document.getElementById('medical-advocate-iframe');
+        let iframe = document.getElementById('billrelief-iframe');
         if (!iframe) {
           iframe = document.createElement('iframe');
-          iframe.name = 'medical-advocate-iframe';
-          iframe.id = 'medical-advocate-iframe';
+          iframe.name = 'billrelief-iframe';
+          iframe.id = 'billrelief-iframe';
           iframe.style.display = 'none';
           document.body.appendChild(iframe);
         }
