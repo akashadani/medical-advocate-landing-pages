@@ -132,39 +132,80 @@
         transform: translateY(0);
       }
 
-      .toast {
-        position: fixed;
-        top: 20px;
-        left: 50%;
-        transform: translateX(-50%) translateY(-100px);
-        background: rgba(16, 185, 129, 0.95);
-        color: white;
-        padding: 16px 24px;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        opacity: 0;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        font-weight: 500;
+
+      .how-it-works {
+        margin: 32px 0;
+        padding: 24px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       }
 
-      .toast.show {
-        transform: translateX(-50%) translateY(0);
-        opacity: 1;
+      .how-it-works h3 {
+        color: #10b981;
+        font-size: 0.75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
       }
 
-      .toast.error {
-        background: rgba(239, 68, 68, 0.95);
+      .steps {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .step {
+        flex: 1;
+        text-align: center;
+      }
+
+      .step-number {
+        width: 32px;
+        height: 32px;
+        background: rgba(16, 185, 129, 0.2);
+        border: 2px solid #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 8px;
+        color: #10b981;
+        font-weight: 700;
+        font-size: 0.875rem;
+      }
+
+      .step-text {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.75rem;
+        line-height: 1.4;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="brand">BillRelief</div>
-      <div class="badge">NO WIN, NO FEE</div>
-      <div class="logo">👶</div>
       <h1>You Just Had a Baby. You Shouldn't Be Drowning in Bills.</h1>
       <p class="tagline">We slash down charges for you</p>
+
+      <div class="how-it-works">
+        <h3>How It Works</h3>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-text">Upload Bill</div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-text">We Negotiate</div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-text">You Save</div>
+          </div>
+        </div>
+      </div>
 
       <form class="email-form" id="email-form">
         <input
@@ -177,8 +218,6 @@
       </form>
     </div>
 
-    <div class="toast" id="toast"></div>
-
     <script>
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZkOvZJg7Rzp_q5K6lIUA20EbZHASjidNZ_RsAjZtw-TtEG4t1dFSOEUZkzhhpe7b8Ow/exec';
 
@@ -188,7 +227,9 @@
         const email = this.querySelector('input[name="email"]').value.trim();
         const urlParams = new URLSearchParams(window.location.search);
         const source = urlParams.get("source") || "new-parents";
-        const toast = document.getElementById("toast");
+
+        // Store email in localStorage for plan selection page
+        localStorage.setItem('billrelief_email', email);
 
         // Create hidden form for submission
         const form = document.createElement('form');
@@ -228,16 +269,9 @@
         document.body.appendChild(form);
         form.submit();
 
-        // Show toast notification
+        // Redirect to pricing page
         setTimeout(() => {
-          this.querySelector('input[name="email"]').value = '';
-
-          toast.textContent = "We'll be in touch soon!";
-          toast.classList.add("show");
-
-          setTimeout(() => {
-            toast.classList.remove("show");
-          }, 3000);
+          window.location.href = 'pricing.html';
         }, 500);
       });
     </script>

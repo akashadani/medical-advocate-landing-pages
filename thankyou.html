@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - BillRelief</title>
+    <script src="https://cdn.logrocket.com/LogRocket.min.js" crossorigin="anonymous"></script>
+    <script>
+      window.addEventListener('load', function() {
+        if (window.LogRocket) {
+          window.LogRocket.init('dhqzb7/billrelief');
+        }
+      });
+    </script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: linear-gradient(135deg, #0a1128 0%, #1e3a5f 50%, #2c5282 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 500px;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 24px;
+        padding: 60px 40px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+      .brand {
+        color: #10b981;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 32px;
+        letter-spacing: -0.5px;
+      }
+
+      .checkmark {
+        width: 80px;
+        height: 80px;
+        background: rgba(16, 185, 129, 0.2);
+        border: 3px solid #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 32px;
+        font-size: 3rem;
+        color: #10b981;
+      }
+
+      h1 {
+        color: #ffffff;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        line-height: 1.2;
+      }
+
+      .message {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.125rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+      }
+
+      .highlight {
+        color: #10b981;
+        font-weight: 600;
+      }
+
+      @media (max-width: 640px) {
+        .container {
+          padding: 40px 24px;
+        }
+
+        h1 {
+          font-size: 1.5rem;
+        }
+
+        .message {
+          font-size: 1rem;
+        }
+
+        .checkmark {
+          width: 64px;
+          height: 64px;
+          font-size: 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="brand">BillRelief</div>
+      <div class="checkmark">✓</div>
+      <h1>Thank You!</h1>
+      <p class="message">
+        <span class="highlight">You'll receive an email</span> from our concierge team soon with instructions to <span class="highlight">upload your bill</span>.
+      </p>
+      <p class="message">
+        Our professional negotiators will personally review your case and start negotiating on your behalf.
+      </p>
+    </div>
+  </body>
+</html>

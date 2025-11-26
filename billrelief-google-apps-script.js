@@ -40,21 +40,23 @@ function doPost(e) {
     let sheet = spreadsheet.getSheetByName(SHEET_NAME);
     if (!sheet) {
       sheet = spreadsheet.insertSheet(SHEET_NAME);
-      sheet.appendRow(["Timestamp", "Email", "Source"]);
+      sheet.appendRow(["Timestamp", "Email", "Source", "Plan"]);
     }
 
     // Parse the POST data (handle both JSON and FormData)
-    let email, source;
+    let email, source, plan;
 
     if (e.postData && e.postData.type === "application/json") {
       // Handle JSON data
       const data = JSON.parse(e.postData.contents);
       email = data.email;
       source = data.source || "unknown";
+      plan = data.plan || "";
     } else {
       // Handle form data
       email = e.parameter.email;
       source = e.parameter.source || "unknown";
+      plan = e.parameter.plan || "";
     }
 
     // Validate email
@@ -63,16 +65,28 @@ function doPost(e) {
     }
 
     // Check if email already exists in column B
-    const existingEmails = sheet.getRange("B:B").getValues().flat();
-    if (existingEmails.includes(email)) {
-      return createResponse(false, "Email already registered");
+    const allData = sheet.getDataRange().getValues();
+    let existingRowIndex = -1;
+
+    for (let i = 1; i < allData.length; i++) {
+      if (allData[i][1] === email) {
+        existingRowIndex = i + 1; // +1 because sheets are 1-indexed
+        break;
+      }
     }
 
-    // Add new row: Timestamp, Email, Source
-    sheet.appendRow([new Date(), email, source]);
-
-    // Return success response
-    return createResponse(true, "Successfully subscribed!");
+    if (existingRowIndex > 0 && plan) {
+      // Email exists and we have a plan - update the plan column (column D = 4)
+      sheet.getRange(existingRowIndex, 4).setValue(plan);
+      return createResponse(true, "Plan updated successfully!");
+    } else if (existingRowIndex > 0) {
+      // Email exists but no plan provided - duplicate email
+      return createResponse(false, "Email already registered");
+    } else {
+      // New email - add new row: Timestamp, Email, Source, Plan
+      sheet.appendRow([new Date(), email, source, plan]);
+      return createResponse(true, "Successfully subscribed!");
+    }
 
   } catch (error) {
     return createResponse(false, "Error: " + error.toString());
@@ -81,29 +95,16 @@ function doPost(e) {
 
 // Handle preflight requests (REQUIRED for CORS)
 function doOptions(e) {
-  const output = ContentService.createTextOutput("");
-  output.setHeaders({
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-  });
-  return output;
+  return ContentService.createTextOutput("")
+    .setMimeType(ContentService.MimeType.TEXT);
 }
 
-// Helper function to create JSON response with CORS headers
+// Helper function to create JSON response
 function createResponse(success, message) {
-  const output = ContentService.createTextOutput(
+  return ContentService.createTextOutput(
     JSON.stringify({
       success: success,
       message: message,
     })
   ).setMimeType(ContentService.MimeType.JSON);
-
-  output.setHeaders({
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "POST",
-    "Access-Control-Allow-Headers": "Content-Type",
-  });
-
-  return output;
 }
