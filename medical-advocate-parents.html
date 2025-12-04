@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reduce Your Baby's Medical Bills - BillRelief</title>
+    <title>Reduce Your Baby's Medical Bills by 52% - BillRelief</title>
     <script src="https://cdn.logrocket.com/LogRocket.min.js" crossorigin="anonymous"></script>
     <script>
       window.addEventListener('load', function() {
@@ -41,215 +41,1076 @@
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
           "Helvetica Neue", Arial, sans-serif;
         background: linear-gradient(135deg, #0a1128 0%, #1e3a5f 50%, #2c5282 100%);
+        background-attachment: fixed;
         min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
+        padding: 0;
       }
 
-      .container {
-        max-width: 400px;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border-radius: 24px;
-        padding: 40px 30px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+      .page-wrapper {
+        max-width: 640px;
+        margin: 0 auto;
+      }
+
+      /* HERO SECTION */
+      .hero-section {
+        padding: 40px 24px 32px;
         text-align: center;
-      }
-
-      .badge {
-        display: inline-block;
-        background: rgba(16, 185, 129, 0.2);
-        color: #10b981;
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        margin-bottom: 24px;
-        border: 1px solid rgba(16, 185, 129, 0.3);
       }
 
       .brand {
         color: #10b981;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         font-weight: 700;
-        margin-bottom: 20px;
+        margin-bottom: 12px;
         letter-spacing: -0.5px;
       }
 
-      .logo {
-        font-size: 2.5rem;
-        margin-bottom: 16px;
+      .trust-badges-top {
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+      }
+
+      .trust-badge-top {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        border: 1px solid rgba(16, 185, 129, 0.3);
       }
 
       h1 {
         color: #ffffff;
-        font-size: 1.75rem;
+        font-size: 2rem;
         font-weight: 700;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
         line-height: 1.2;
+        text-align: center;
       }
 
-      .tagline {
-        color: rgba(255, 255, 255, 0.8);
-        font-size: 0.8rem;
-        margin-bottom: 32px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
+      .hero-subtitle {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 1rem;
+        margin-bottom: 24px;
+        line-height: 1.5;
       }
 
       .email-form {
         display: flex;
         flex-direction: column;
         gap: 12px;
-        margin-top: 32px;
+        max-width: 400px;
+        margin: 0 auto 16px;
       }
 
       input[type="email"] {
-        padding: 16px;
-        border: 2px solid rgba(255, 255, 255, 0.1);
+        padding: 18px;
+        border: 2px solid rgba(255, 255, 255, 0.2);
         border-radius: 12px;
-        background: rgba(255, 255, 255, 0.05);
+        background: rgba(255, 255, 255, 0.1);
         color: #ffffff;
-        font-size: 1rem;
+        font-size: 1.05rem;
         transition: all 0.3s ease;
       }
 
       input[type="email"]::placeholder {
-        color: rgba(255, 255, 255, 0.5);
+        color: rgba(255, 255, 255, 0.6);
       }
 
       input[type="email"]:focus {
         outline: none;
         border-color: #10b981;
-        background: rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.15);
       }
 
       button {
-        padding: 16px;
+        padding: 18px;
         background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: #ffffff;
         border: none;
         border-radius: 12px;
-        font-size: 1rem;
+        font-size: 1.05rem;
         font-weight: 600;
         cursor: pointer;
         transition: all 0.3s ease;
-        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
       }
 
       button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
       }
 
       button:active {
         transform: translateY(0);
       }
 
-
-      .how-it-works {
-        margin: 32px 0;
-        padding: 24px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      .form-subtext {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.8rem;
+        margin-bottom: 8px;
       }
 
-      .how-it-works h3 {
+      .security-badges {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+
+      .security-badge {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      /* STATS SECTION */
+      .stats-section {
+        background: rgba(16, 185, 129, 0.08);
+        border-top: 1px solid rgba(16, 185, 129, 0.2);
+        border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        padding: 32px 24px;
+        margin: 24px 0;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      h2 {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      h3 {
         color: #10b981;
         font-size: 0.75rem;
         font-weight: 600;
         text-transform: uppercase;
         letter-spacing: 1px;
+        margin-bottom: 8px;
+      }
+
+      .section-subtitle {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .stats-simple {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .stat-row {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(16, 185, 129, 0.3);
+        border-radius: 12px;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .stat-row-label {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.9rem;
+      }
+
+      .stat-row-value {
+        color: #10b981;
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      /* CONTENT SECTIONS */
+      .content-section {
+        padding: 0 24px 32px;
+      }
+
+      /* Cards with gradient borders */
+      .gradient-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 28px 24px;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+
+      .gradient-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #10b981, #059669);
+      }
+
+      /* Pricing box */
+      .pricing-box {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.1));
+        border: 2px solid #10b981;
+        border-radius: 20px;
+        padding: 32px 24px;
+        margin: 24px 0;
+        text-align: center;
+        box-shadow: 0 8px 32px rgba(16, 185, 129, 0.2);
+      }
+
+      .pricing-headline {
+        color: #10b981;
+        font-size: 1.3rem;
+        font-weight: 700;
         margin-bottom: 16px;
       }
 
-      .steps {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 16px;
+      .pricing-detail {
+        color: rgba(255, 255, 255, 0.95);
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 10px;
       }
 
-      .step {
-        flex: 1;
+      .pricing-detail strong {
+        color: #ffffff;
+      }
+
+      /* Calculator section */
+      .calculator-box {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 16px;
+        padding: 24px;
+        margin: 20px 0;
+      }
+
+      .calculator-label {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        font-weight: 600;
+      }
+
+      input[type="range"] {
+        width: 100%;
+        height: 8px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0.2);
+        outline: none;
+        margin-bottom: 12px;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #10b981;
+        cursor: pointer;
+      }
+
+      input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #10b981;
+        cursor: pointer;
+      }
+
+      .calculator-result {
+        background: rgba(16, 185, 129, 0.1);
+        border-radius: 12px;
+        padding: 16px;
+        margin-top: 16px;
+      }
+
+      .calc-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .calc-label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.85rem;
+      }
+
+      .calc-value {
+        color: #10b981;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      /* What we check - simplified */
+      .check-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 20px 0;
+      }
+
+      .check-item {
+        background: rgba(255, 255, 255, 0.04);
+        border-left: 3px solid #10b981;
+        border-radius: 8px;
+        padding: 14px 18px;
+      }
+
+      .check-item-title {
+        color: #10b981;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      /* DIY grid */
+      .diy-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 20px 0;
+      }
+
+      .diy-item {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 16px;
         text-align: center;
       }
 
-      .step-number {
-        width: 32px;
-        height: 32px;
-        background: rgba(16, 185, 129, 0.2);
-        border: 2px solid #10b981;
+      .diy-icon {
+        font-size: 1.5rem;
+        margin-bottom: 8px;
+      }
+
+      .diy-text {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.85rem;
+        line-height: 1.3;
+      }
+
+      /* Testimonials */
+      .testimonial {
+        background: rgba(255, 255, 255, 0.05);
+        border-left: 4px solid #10b981;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 16px;
+      }
+
+      .testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .testimonial-avatar {
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #10b981, #059669);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 auto 8px;
-        color: #10b981;
+        color: white;
         font-weight: 700;
-        font-size: 0.875rem;
+        font-size: 1.2rem;
+        flex-shrink: 0;
       }
 
-      .step-text {
-        color: rgba(255, 255, 255, 0.9);
+      .testimonial-info {
+        flex: 1;
+      }
+
+      .testimonial-author {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin-bottom: 2px;
+      }
+
+      .testimonial-location {
+        color: rgba(255, 255, 255, 0.6);
         font-size: 0.75rem;
+      }
+
+      .testimonial-text {
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+      }
+
+      .testimonial-savings {
+        color: #10b981;
+        font-weight: 700;
+        font-size: 0.85rem;
+      }
+
+      /* Guarantee box */
+      .guarantee-box {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.05));
+        border: 2px dashed rgba(16, 185, 129, 0.4);
+        border-radius: 16px;
+        padding: 28px 24px;
+        text-align: center;
+        margin: 24px 0;
+      }
+
+      .guarantee-icon {
+        font-size: 3rem;
+        margin-bottom: 12px;
+        filter: drop-shadow(0 4px 8px rgba(16, 185, 129, 0.3));
+      }
+
+      .guarantee-text {
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 1.1rem;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      .guarantee-subtext {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 0.9rem;
         line-height: 1.4;
+      }
+
+      .guarantee-bullets {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .guarantee-bullet {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 8px;
+        padding: 12px;
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.85rem;
+        text-align: center;
+      }
+
+      /* FAQ - collapsible */
+      .faq-item {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        margin-bottom: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .faq-item.active {
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(16, 185, 129, 0.3);
+      }
+
+      .faq-question {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        user-select: none;
+      }
+
+      .faq-question-text {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .faq-question-text::before {
+        content: "Q";
+        background: #10b981;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 0.8rem;
+        flex-shrink: 0;
+      }
+
+      .faq-toggle {
+        color: #10b981;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .faq-item.active .faq-toggle {
+        transform: rotate(180deg);
+      }
+
+      .faq-answer {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.88rem;
+        line-height: 1.5;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+        padding: 0 18px 18px 50px;
+      }
+
+      /* Trust logos */
+      .trust-logos {
+        text-align: center;
+        padding: 24px;
+        margin: 16px 0;
+      }
+
+      .logos-grid {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+
+      .logo-item {
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        padding: 12px 20px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.75rem;
+        font-weight: 600;
+      }
+
+      /* CTA section */
+      .cta-section {
+        background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.1));
+        border-top: 2px solid rgba(16, 185, 129, 0.3);
+        border-bottom: 2px solid rgba(16, 185, 129, 0.3);
+        padding: 40px 24px;
+        margin: 32px 0;
+        text-align: center;
+      }
+
+      .cta-stats {
+        display: flex;
+        justify-content: center;
+        gap: 48px;
+        margin: 24px 0;
+        flex-wrap: wrap;
+      }
+
+      .cta-stat {
+        text-align: center;
+      }
+
+      .cta-stat-number {
+        color: #10b981;
+        font-size: 1.8rem;
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .cta-stat-label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.8rem;
+      }
+
+      /* Mid-page CTA */
+      .mid-cta {
+        background: rgba(16, 185, 129, 0.08);
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        border-radius: 16px;
+        padding: 24px;
+        text-align: center;
+        margin: 32px 0;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 24px;
+        text-align: center;
+      }
+
+      .footer-text {
+        color: rgba(255, 255, 255, 0.5);
+        font-size: 0.75rem;
+        line-height: 1.5;
+        margin-bottom: 16px;
+      }
+
+      /* Mobile tap to call */
+      .mobile-call-button {
+        display: none;
+        background: rgba(16, 185, 129, 0.15);
+        border: 2px solid #10b981;
+        border-radius: 12px;
+        padding: 14px;
+        margin: 16px 0;
+        text-align: center;
+        text-decoration: none;
+        color: #10b981;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 768px) {
+        .mobile-call-button {
+          display: block;
+        }
+      }
+
+      /* Comparison row */
+      .comparison-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 20px 0;
+      }
+
+      .comparison-item {
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 16px;
+        text-align: center;
+      }
+
+      .comparison-item.highlight {
+        background: rgba(16, 185, 129, 0.1);
+        border-color: #10b981;
+      }
+
+      .comparison-label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.75rem;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        font-weight: 600;
+      }
+
+      .comparison-value {
+        color: #ffffff;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      .comparison-value strong {
+        color: #10b981;
+      }
+
+      .divider {
+        height: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        margin: 32px 0;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="brand">BillRelief</div>
-      <h1>You Just Had a Baby. You Shouldn't Be Drowning in Bills.</h1>
-      <p class="tagline">We slash down charges for you</p>
+    <div class="page-wrapper">
+      <!-- HERO SECTION -->
+      <div class="hero-section">
+        <div class="brand">BillRelief</div>
+        <div class="trust-badges-top">
+          <span class="trust-badge-top">⭐ 4.9 Stars</span>
+          <span class="trust-badge-top">✓ 2,800+ families helped</span>
+        </div>
 
-      <div class="how-it-works">
-        <h3>How It Works</h3>
-        <div class="steps">
-          <div class="step">
-            <div class="step-number">1</div>
-            <div class="step-text">Upload Bill</div>
+        <h1>Focus on Your Baby, Not Medical Bills</h1>
+        <p class="hero-subtitle">Average 52% reduction. Most parents save $12K-$40K.<br><strong style="color: #10b981;">Free until we save you money. We win together.</strong></p>
+
+        <form class="email-form" id="email-form-1">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit">Get a Savings Estimate →</button>
+        </form>
+
+        <div class="security-badges">
+          <div class="security-badge">🔒 HIPAA Compliant</div>
+          <div class="security-badge">🛡️ Bank-Level Encryption</div>
+          <div class="security-badge">✓ No SSN Required</div>
+        </div>
+
+        <a href="tel:+1-555-0100" class="mobile-call-button">
+          📞 Or Tap to Call: (555) 010-0100
+        </a>
+      </div>
+
+      <!-- STATS SECTION -->
+      <div class="stats-section">
+        <div class="section-header">
+          <h3>The Medical Billing Crisis</h3>
+          <h2>Medical Bills Are Broken. We Fix Them</h2>
+        </div>
+
+        <div class="stats-simple">
+          <div class="stat-row">
+            <span class="stat-row-label">Bills with errors</span>
+            <span class="stat-row-value">80%</span>
           </div>
-          <div class="step">
-            <div class="step-number">2</div>
-            <div class="step-text">We Negotiate</div>
+          <div class="stat-row">
+            <span class="stat-row-label">Markup if uninsured</span>
+            <span class="stat-row-value">3-5x</span>
           </div>
-          <div class="step">
-            <div class="step-number">3</div>
-            <div class="step-text">You Save</div>
+        </div>
+
+        <p style="color: rgba(255, 255, 255, 0.85); text-align: center; margin-top: 24px; font-size: 0.95rem; line-height: 1.6;">
+          We've helped <strong style="color: #10b981;">2,800+ families</strong> reduce their bills by an average of <strong style="color: #10b981;">52%</strong>, with a <strong style="color: #10b981;">94% success rate</strong>.
+        </p>
+      </div>
+
+      <!-- WHY DIY FAILS -->
+      <div class="content-section">
+        <div class="gradient-card">
+          <div class="section-header">
+            <h3>The Comparison</h3>
+            <h2>DIY vs. BillRelief</h2>
+          </div>
+
+          <div class="comparison-row" style="margin-bottom: 12px;">
+            <div class="comparison-item">
+              <div class="comparison-label" style="margin-bottom: 12px;">On Your Own</div>
+              <div style="text-align: left; padding: 0 8px;">
+                <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #ef4444;">❌</span>
+                  <span>No leverage</span>
+                </div>
+                <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #ef4444;">❌</span>
+                  <span>No billing codes</span>
+                </div>
+                <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #ef4444;">❌</span>
+                  <span>40+ hours work</span>
+                </div>
+                <div style="color: rgba(255, 255, 255, 0.7); font-size: 0.8rem; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #ef4444;">❌</span>
+                  <span>12% success rate</span>
+                </div>
+              </div>
+            </div>
+            <div class="comparison-item highlight">
+              <div class="comparison-label" style="margin-bottom: 12px;">With BillRelief</div>
+              <div style="text-align: left; padding: 0 8px;">
+                <div style="color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #10b981;">✓</span>
+                  <span>Professional leverage</span>
+                </div>
+                <div style="color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #10b981;">✓</span>
+                  <span>Expert billing knowledge</span>
+                </div>
+                <div style="color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; margin-bottom: 8px; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #10b981;">✓</span>
+                  <span>Zero work for you</span>
+                </div>
+                <div style="color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; display: flex; align-items: flex-start; gap: 8px;">
+                  <span style="color: #10b981;">✓</span>
+                  <span><strong>94% success rate</strong></span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <form class="email-form" id="email-form">
-        <input
-          type="email"
-          name="email"
-          placeholder="Enter your email"
-          required
-        />
-        <button type="submit">Get Free Consultation</button>
-      </form>
+      <!-- CALCULATOR -->
+      <div class="content-section">
+        <div class="gradient-card">
+          <div class="section-header">
+            <h2>💰 Calculate Your Potential Savings</h2>
+          </div>
+
+          <div class="calculator-box">
+            <div class="calculator-label">What's your approximate bill amount?</div>
+            <input type="range" id="billAmount" min="5000" max="100000" value="30000" step="1000">
+            <div style="text-align: center; color: #10b981; font-size: 1.3rem; font-weight: 700; margin-bottom: 16px;">
+              $<span id="billDisplay">30,000</span>
+            </div>
+
+            <div class="calculator-result">
+              <div class="calc-row">
+                <span class="calc-label">If we reduce by 52%:</span>
+                <span class="calc-value">$<span id="reduction">15,600</span></span>
+              </div>
+              <div class="calc-row">
+                <span class="calc-label">Our fee (25%):</span>
+                <span class="calc-value">$<span id="fee">3,900</span></span>
+              </div>
+              <div class="calc-row" style="padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <span class="calc-label" style="font-weight: 600; color: #fff;">You keep:</span>
+                <span class="calc-value" style="font-size: 1.3rem;">$<span id="savings">11,700</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRICING -->
+      <div class="content-section">
+        <div class="pricing-box">
+          <div class="pricing-headline">We Only Get Paid When You Save</div>
+          <div class="pricing-detail">$0 to start. 25% of savings after your bill is reduced.</div>
+        </div>
+      </div>
+
+      <!-- MID-PAGE CTA -->
+      <div class="content-section">
+        <div class="mid-cta">
+          <p style="color: rgba(255, 255, 255, 0.9); font-size: 1rem; margin-bottom: 16px; font-weight: 600;">Ready to get started?</p>
+          <form class="email-form" id="email-form-2">
+            <input
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <button type="submit">Get Started →</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- WHAT WE CHECK -->
+      <div class="content-section">
+        <div class="gradient-card">
+          <div class="section-header">
+            <h3>Our Process</h3>
+            <h2>What We Check in Your Bill</h2>
+          </div>
+
+          <div class="check-grid">
+            <div class="check-item">
+              <div class="check-item-title">🔍 Billing Errors & Duplicates</div>
+            </div>
+            <div class="check-item">
+              <div class="check-item-title">💰 Price Overcharges</div>
+            </div>
+            <div class="check-item">
+              <div class="check-item-title">📋 Incorrect Billing Codes</div>
+            </div>
+            <div class="check-item">
+              <div class="check-item-title">🎁 Financial Assistance Programs</div>
+            </div>
+            <div class="check-item">
+              <div class="check-item-title">💳 Cash Payment Discounts</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TESTIMONIALS -->
+      <div class="content-section">
+        <div class="section-header">
+          <h3>Real Families, Real Savings</h3>
+          <h2>Parents Just Like You</h2>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">SM</div>
+            <div class="testimonial-info">
+              <div class="testimonial-author">Sarah Martinez</div>
+              <div class="testimonial-location">Austin, TX • March 2024</div>
+            </div>
+          </div>
+          <div class="testimonial-text">
+            NICU bill: $87K → $34K. Kept $39,750 in savings.
+          </div>
+          <div class="testimonial-savings">💰 Total Saved: $53,000</div>
+        </div>
+
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar">JK</div>
+            <div class="testimonial-info">
+              <div class="testimonial-author">Jennifer Kim</div>
+              <div class="testimonial-location">Phoenix, AZ • January 2024</div>
+            </div>
+          </div>
+          <div class="testimonial-text">
+            Emergency C-section: $31K → $14.5K. Saved $12,375 after their fee.
+          </div>
+          <div class="testimonial-savings">💰 Total Saved: $16,500</div>
+        </div>
+      </div>
+
+      <!-- GUARANTEE -->
+      <div class="content-section">
+        <div class="guarantee-box">
+          <div class="guarantee-icon">🛡️</div>
+          <div class="guarantee-text">If We Don't Save You Money, You Pay Nothing</div>
+          <div class="guarantee-subtext">Zero risk. Zero upfront cost.</div>
+
+          <div class="guarantee-bullets">
+            <div class="guarantee-bullet">Won't hurt credit</div>
+            <div class="guarantee-bullet">You approve offers</div>
+            <div class="guarantee-bullet">No contracts</div>
+            <div class="guarantee-bullet">Cancel anytime</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="content-section">
+        <div class="section-header">
+          <h3>Common Questions</h3>
+          <h2>Everything You Need to Know</h2>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">Is this legal?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">Yes. It's your legal right to negotiate and request itemized bills.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">Will this hurt my credit?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">No. We negotiate before collections, and medical debt can't be reported for 180 days.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">How is my data protected?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">HIPAA compliant with bank-level encryption. We never sell your information.</div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span class="faq-question-text">Why do hospitals negotiate?</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">They'd rather receive 60% than send to collections and get 20% or nothing.</div>
+        </div>
+      </div>
+
+      <!-- FINAL CTA -->
+      <div class="cta-section">
+        <h2>Ready to Reduce Your Medical Bills?</h2>
+        <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Join 2,800+ families who've saved an average of $18,400 this year</p>
+
+        <div class="cta-stats">
+          <div class="cta-stat">
+            <div class="cta-stat-number">$0</div>
+            <div class="cta-stat-label">to get started</div>
+          </div>
+          <div class="cta-stat">
+            <div class="cta-stat-number">$0</div>
+            <div class="cta-stat-label">if we don't save you money</div>
+          </div>
+        </div>
+
+        <form class="email-form" id="email-form-3" style="margin-top: 24px;">
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <button type="submit">Get My Free Savings Estimate →</button>
+        </form>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+      </div>
     </div>
 
     <script>
+      // Calculator
+      const billSlider = document.getElementById('billAmount');
+      const billDisplay = document.getElementById('billDisplay');
+      const reductionDisplay = document.getElementById('reduction');
+      const feeDisplay = document.getElementById('fee');
+      const savingsDisplay = document.getElementById('savings');
+
+      function updateCalculator() {
+        const bill = parseInt(billSlider.value);
+        const reduction = Math.round(bill * 0.52);
+        const fee = Math.round(reduction * 0.25);
+        const savings = reduction - fee;
+
+        billDisplay.textContent = bill.toLocaleString();
+        reductionDisplay.textContent = reduction.toLocaleString();
+        feeDisplay.textContent = fee.toLocaleString();
+        savingsDisplay.textContent = savings.toLocaleString();
+      }
+
+      billSlider.addEventListener('input', updateCalculator);
+      updateCalculator();
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+          const faqItem = this.parentElement;
+          const isActive = faqItem.classList.contains('active');
+
+          document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
+          });
+
+          if (!isActive) {
+            faqItem.classList.add('active');
+          }
+        });
+      });
+
+      // Form submission
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwZkOvZJg7Rzp_q5K6lIUA20EbZHASjidNZ_RsAjZtw-TtEG4t1dFSOEUZkzhhpe7b8Ow/exec';
 
-      document.getElementById('email-form').addEventListener('submit', function(e) {
+      function handleFormSubmit(e) {
         e.preventDefault();
 
         const email = this.querySelector('input[name="email"]').value.trim();
         const urlParams = new URLSearchParams(window.location.search);
         const source = urlParams.get("source") || "new-parents";
 
-        // Store email in localStorage for plan selection page
         localStorage.setItem('billrelief_email', email);
 
-        // Create hidden form for submission
         const form = document.createElement('form');
         form.method = 'POST';
         form.action = GOOGLE_SCRIPT_URL;
@@ -274,7 +1135,6 @@
         projectField.value = 'billrelief';
         form.appendChild(projectField);
 
-        // Create hidden iframe
         let iframe = document.getElementById('billrelief-iframe');
         if (!iframe) {
           iframe = document.createElement('iframe');
@@ -289,11 +1149,14 @@
 
         fbq('track', 'CompleteRegistration');
 
-        // Redirect to pricing page
         setTimeout(() => {
           window.location.href = 'pricing.html';
         }, 500);
-      });
+      }
+
+      document.getElementById('email-form-1').addEventListener('submit', handleFormSubmit);
+      document.getElementById('email-form-2').addEventListener('submit', handleFormSubmit);
+      document.getElementById('email-form-3').addEventListener('submit', handleFormSubmit);
     </script>
   </body>
 </html>
